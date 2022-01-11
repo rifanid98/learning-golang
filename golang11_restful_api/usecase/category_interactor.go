@@ -15,6 +15,18 @@ type CategoryInteractor struct {
 	Validator          *validator.Validate
 }
 
+func NewCategoryInteractor(
+	categoryRepository repository.CategoryRepository,
+	DB *sql.DB,
+	validator *validator.Validate,
+) CategoryUsecase {
+	return &CategoryInteractor{
+		CategoryRepository: categoryRepository,
+		DB:                 DB,
+		Validator:          validator,
+	}
+}
+
 func (uc CategoryInteractor) Create(ctx context.Context, input *CategoryInput) *CategoryOutput {
 	err := uc.Validator.Struct(input)
 	common.PanicIfError(err)

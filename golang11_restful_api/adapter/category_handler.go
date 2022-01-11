@@ -13,6 +13,10 @@ type CategoryHandler struct {
 	uc usecase.CategoryUsecase
 }
 
+func NewCategoryHandler(uc usecase.CategoryUsecase) CategoryController {
+	return &CategoryHandler{uc}
+}
+
 func (h CategoryHandler) Create(writer http.ResponseWriter, request *http.Request, params httprouter.Params) {
 	input := &usecase.CategoryInput{}
 	common.GetRequestBody(request, &input)

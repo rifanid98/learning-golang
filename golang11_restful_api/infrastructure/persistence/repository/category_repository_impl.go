@@ -6,9 +6,14 @@ import (
 	"errors"
 	"golang11_restful_api/common"
 	"golang11_restful_api/domain/entity"
+	"golang11_restful_api/domain/repository"
 )
 
 type CategoryRepositoryImpl struct{}
+
+func NewCategoryRepositoryImpl() repository.CategoryRepository {
+	return &CategoryRepositoryImpl{}
+}
 
 func (c CategoryRepositoryImpl) Save(ctx context.Context, tx *sql.Tx, category *entity.Category) *entity.Category {
 	query := "INSERT INTO category(name) VALUES (?)"
