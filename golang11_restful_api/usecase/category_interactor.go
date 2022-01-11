@@ -3,6 +3,7 @@ package usecase
 import (
 	"context"
 	"database/sql"
+	"github.com/go-playground/validator"
 	"golang11_restful_api/common"
 	"golang11_restful_api/domain/entity"
 	"golang11_restful_api/domain/repository"
@@ -11,9 +12,13 @@ import (
 type CategoryInteractor struct {
 	CategoryRepository repository.CategoryRepository
 	DB                 *sql.DB
+	Validator          *validator.Validate
 }
 
 func (uc CategoryInteractor) Create(ctx context.Context, input *CategoryInput) *CategoryOutput {
+	err := uc.Validator.Struct(input)
+	common.PanicIfError(err)
+
 	tx, err := uc.DB.Begin()
 	common.PanicIfError(err)
 	defer common.CommitOrRollback(tx)
@@ -28,6 +33,9 @@ func (uc CategoryInteractor) Create(ctx context.Context, input *CategoryInput) *
 }
 
 func (uc CategoryInteractor) Update(ctx context.Context, input *CategoryInput) *CategoryOutput {
+	err := uc.Validator.Struct(input)
+	common.PanicIfError(err)
+
 	tx, err := uc.DB.Begin()
 	common.PanicIfError(err)
 	defer common.CommitOrRollback(tx)

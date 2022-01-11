@@ -14,8 +14,8 @@ type CategoryUsecase interface {
 }
 
 type CategoryInput struct {
-	Id   int    `json:"id"`
-	Name string `json:"name"`
+	Id   int    `json:"id" validate:"number,min=1"`
+	Name string `json:"name" validate:"required,min=1,max=200"`
 }
 
 type CategoryOutput struct {
