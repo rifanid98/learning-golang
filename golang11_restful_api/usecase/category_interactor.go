@@ -57,7 +57,7 @@ func (uc CategoryInteractor) Update(ctx context.Context, input *CategoryInput) *
 
 	category.Name = input.Name
 
-	category = uc.CategoryRepository.Save(ctx, tx, category)
+	category = uc.CategoryRepository.Update(ctx, tx, category)
 
 	return NewCategoryOutput(category)
 }

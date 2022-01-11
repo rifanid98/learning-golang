@@ -43,13 +43,17 @@ func (c CategoryRepositoryImpl) Delete(ctx context.Context, tx *sql.Tx, category
 }
 
 func (c CategoryRepositoryImpl) FindById(ctx context.Context, tx *sql.Tx, id int) (*entity.Category, error) {
-	query := "SELECT FROM category WHERE id = ?"
+	query := "SELECT * FROM category WHERE id = ?"
 	rows, err := tx.QueryContext(ctx, query, id)
 	common.PanicIfError(err)
+	defer func(rows *sql.Rows) {
+		err := rows.Close()
+		common.PanicIfError(err)
+	}(rows)
 
 	category := entity.Category{}
 	if rows.Next() {
-		err := rows.Scan(&category)
+		err := rows.Scan(&category.Id, &category.Name)
 		common.PanicIfError(err)
 		return &category, nil
 	} else {
@@ -61,11 +65,16 @@ func (c CategoryRepositoryImpl) FindAll(ctx context.Context, tx *sql.Tx) []entit
 	query := "SELECT * FROM category"
 	rows, err := tx.QueryContext(ctx, query)
 	common.PanicIfError(err)
+	defer func(rows *sql.Rows) {
+		err := rows.Close()
+		common.PanicIfError(err)
+	}(rows)
 
 	var categories []entity.Category
+
 	for rows.Next() {
 		category := entity.Category{}
-		err := rows.Scan(&category)
+		err := rows.Scan(&category.Id, &category.Name)
 		common.PanicIfError(err)
 		categories = append(categories, category)
 	}
