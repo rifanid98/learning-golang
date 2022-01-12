@@ -1,4 +1,4 @@
-package dependency_injection
+package _09struct_provider
 
 type Foo struct {
 }

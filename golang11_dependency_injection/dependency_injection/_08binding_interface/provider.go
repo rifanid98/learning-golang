@@ -1,4 +1,4 @@
-package dependency_injection
+package _08binding_interface
 
 type SayHello interface {
 	Hello(name string) string

@@ -1,4 +1,4 @@
-package dependency_injection
+package _11struct_field_provider
 
 type Configuration struct {
 	Name string

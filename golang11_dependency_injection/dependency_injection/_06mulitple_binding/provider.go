@@ -1,4 +1,4 @@
-package dependency_injection
+package _06mulitple_binding
 
 type Database struct {
 	Name string

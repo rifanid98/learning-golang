@@ -1,4 +1,4 @@
-package dependency_injection
+package _07provider_set
 
 type FooBarService struct {
 	*FooService
