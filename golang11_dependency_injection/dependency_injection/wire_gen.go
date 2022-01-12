@@ -6,7 +6,7 @@
 
 package dependency_injection
 
-// Injectors from 02injector.go:
+// Injectors from injector.go:
 
 func InitializedService() (*SimpleService, error) {
 	simpleRepository := NewSimpleRepository()
