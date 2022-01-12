@@ -1,4 +1,4 @@
-package simple
+package dependency_injection
 
 type SimpleRepository struct {
 }
