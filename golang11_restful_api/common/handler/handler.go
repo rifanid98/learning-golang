@@ -1,19 +1,20 @@
-package common
+package handler
 
 import (
 	"encoding/json"
+	error2 "golang11_restful_api/common/error"
 	"net/http"
 )
 
 func GetRequestBody(request *http.Request, data interface{}) {
 	decoder := json.NewDecoder(request.Body)
 	err := decoder.Decode(data)
-	PanicIfError(err)
+	error2.PanicIfError(err)
 }
 
 func SendResponseBody(writer http.ResponseWriter, data interface{}) {
 	writer.Header().Add("Content-Type", "application/json")
 	encoder := json.NewEncoder(writer)
 	err := encoder.Encode(data)
-	PanicIfError(err)
+	error2.PanicIfError(err)
 }

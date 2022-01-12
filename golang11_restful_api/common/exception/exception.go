@@ -1,7 +1,9 @@
-package common
+package exception
 
 import (
 	"github.com/go-playground/validator"
+	"golang11_restful_api/common/handler"
+	"golang11_restful_api/common/response"
 	"net/http"
 )
 
@@ -23,13 +25,13 @@ func validationErrors(writer http.ResponseWriter, request *http.Request, err int
 		writer.Header().Set("Content-Type", "application/json")
 		writer.WriteHeader(http.StatusBadRequest)
 
-		response := PublicResponse{
+		response := response.PublicResponse{
 			Code:   http.StatusBadRequest,
 			Status: "Bad Request",
 			Data:   exception.Error(),
 		}
 
-		SendResponseBody(writer, &response)
+		handler.SendResponseBody(writer, &response)
 		return true
 	}
 
@@ -42,13 +44,13 @@ func notFoundError(writer http.ResponseWriter, request *http.Request, err interf
 		writer.Header().Set("Content-Type", "application/json")
 		writer.WriteHeader(http.StatusNotFound)
 
-		response := PublicResponse{
+		response := response.PublicResponse{
 			Code:   http.StatusNotFound,
 			Status: "Not Found",
 			Data:   exception.Error,
 		}
 
-		SendResponseBody(writer, &response)
+		handler.SendResponseBody(writer, &response)
 		return true
 	}
 
@@ -59,13 +61,13 @@ func internalServerError(writer http.ResponseWriter, request *http.Request, err 
 	writer.Header().Set("Content-Type", "application/json")
 	writer.WriteHeader(http.StatusInternalServerError)
 
-	response := PublicResponse{
+	response := response.PublicResponse{
 		Code:   http.StatusInternalServerError,
 		Status: "Internal Server Error",
 		Data:   err,
 	}
 
-	SendResponseBody(writer, &response)
+	handler.SendResponseBody(writer, &response)
 }
 
 type NotFoundError struct {

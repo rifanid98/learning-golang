@@ -1,4 +1,4 @@
-package common
+package response
 
 type PublicResponse struct {
 	Code   int         `json:"code"`

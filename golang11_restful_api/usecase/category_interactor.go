@@ -4,7 +4,9 @@ import (
 	"context"
 	"database/sql"
 	"github.com/go-playground/validator"
-	"golang11_restful_api/common"
+	"golang11_restful_api/common/database"
+	error2 "golang11_restful_api/common/error"
+	"golang11_restful_api/common/exception"
 	"golang11_restful_api/domain/entity"
 	"golang11_restful_api/domain/repository"
 )
@@ -29,10 +31,10 @@ func NewCategoryInteractor(
 
 func (uc CategoryInteractor) Create(ctx context.Context, input *CategoryInput) *CategoryOutput {
 	err := uc.Validator.Struct(input)
-	common.PanicIfError(err)
+	error2.PanicIfError(err)
 
 	tx, err := uc.DB.Begin()
-	common.PanicIfError(err)
+	error2.PanicIfError(err)
 
 	category := &entity.Category{
 		Name: input.Name,
@@ -40,59 +42,59 @@ func (uc CategoryInteractor) Create(ctx context.Context, input *CategoryInput) *
 
 	category = uc.CategoryRepository.Save(ctx, tx, category)
 
-	common.CommitOrRollback(tx)
+	database.CommitOrRollback(tx)
 	return NewCategoryOutput(category)
 }
 
 func (uc CategoryInteractor) Update(ctx context.Context, input *CategoryInput) *CategoryOutput {
 	err := uc.Validator.Struct(input)
-	common.PanicIfError(err)
+	error2.PanicIfError(err)
 
 	tx, err := uc.DB.Begin()
-	common.PanicIfError(err)
+	error2.PanicIfError(err)
 
 	category, err := uc.CategoryRepository.FindById(ctx, tx, input.Id)
 	if err != nil {
-		panic(common.NewNotFoundError(err.Error()))
+		panic(exception.NewNotFoundError(err.Error()))
 	}
 
 	category.Name = input.Name
 
 	category = uc.CategoryRepository.Update(ctx, tx, category)
 
-	common.CommitOrRollback(tx)
+	database.CommitOrRollback(tx)
 	return NewCategoryOutput(category)
 }
 
 func (uc CategoryInteractor) Delete(ctx context.Context, id int) {
 	tx, err := uc.DB.Begin()
-	common.PanicIfError(err)
+	error2.PanicIfError(err)
 
 	category, err := uc.CategoryRepository.FindById(ctx, tx, id)
 	if err != nil {
-		panic(common.NewNotFoundError(err.Error()))
+		panic(exception.NewNotFoundError(err.Error()))
 	}
 
 	uc.CategoryRepository.Delete(ctx, tx, category)
-	common.CommitOrRollback(tx)
+	database.CommitOrRollback(tx)
 }
 
 func (uc CategoryInteractor) FindById(ctx context.Context, id int) *CategoryOutput {
 	tx, err := uc.DB.Begin()
-	common.PanicIfError(err)
+	error2.PanicIfError(err)
 
 	category, err := uc.CategoryRepository.FindById(ctx, tx, id)
 	if err != nil {
-		panic(common.NewNotFoundError(err.Error()))
+		panic(exception.NewNotFoundError(err.Error()))
 	}
 
-	common.CommitOrRollback(tx)
+	database.CommitOrRollback(tx)
 	return NewCategoryOutput(category)
 }
 
 func (uc CategoryInteractor) FindAll(ctx context.Context) []CategoryOutput {
 	tx, err := uc.DB.Begin()
-	common.PanicIfError(err)
+	error2.PanicIfError(err)
 
 	categories := uc.CategoryRepository.FindAll(ctx, tx)
 
@@ -102,6 +104,6 @@ func (uc CategoryInteractor) FindAll(ctx context.Context) []CategoryOutput {
 		categoriesOutput = append(categoriesOutput, *NewCategoryOutput(&category))
 	}
 
-	common.CommitOrRollback(tx)
+	database.CommitOrRollback(tx)
 	return categoriesOutput
 }
