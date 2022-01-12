@@ -21,7 +21,7 @@ func NewCategoryInteractor(
 	categoryRepository repository.CategoryRepository,
 	DB *sql.DB,
 	validator *validator.Validate,
-) CategoryUsecase {
+) *CategoryInteractor {
 	return &CategoryInteractor{
 		CategoryRepository: categoryRepository,
 		DB:                 DB,

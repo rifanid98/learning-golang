@@ -6,12 +6,11 @@ import (
 	"errors"
 	error2 "golang12_dependency_injection/restfulapi/common/error"
 	"golang12_dependency_injection/restfulapi/domain/entity"
-	"golang12_dependency_injection/restfulapi/domain/repository"
 )
 
 type CategoryRepositoryImpl struct{}
 
-func NewCategoryRepositoryImpl() repository.CategoryRepository {
+func NewCategoryRepositoryImpl() *CategoryRepositoryImpl {
 	return &CategoryRepositoryImpl{}
 }
 

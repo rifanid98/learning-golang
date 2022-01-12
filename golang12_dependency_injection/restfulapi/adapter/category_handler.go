@@ -15,7 +15,7 @@ type CategoryHandler struct {
 	uc usecase.CategoryUsecase
 }
 
-func NewCategoryHandler(uc usecase.CategoryUsecase) CategoryController {
+func NewCategoryHandler(uc usecase.CategoryUsecase) *CategoryHandler {
 	return &CategoryHandler{uc}
 }
 
