@@ -12,7 +12,8 @@ func GetRequestBody(request *http.Request, data interface{}) {
 	error2.PanicIfError(err)
 }
 
-func SendResponseBody(writer http.ResponseWriter, data interface{}) {
+func SendResponseBody(writer http.ResponseWriter, data interface{}, statusCode int) {
+	writer.WriteHeader(statusCode)
 	writer.Header().Add("Content-Type", "application/json")
 	encoder := json.NewEncoder(writer)
 	err := encoder.Encode(data)

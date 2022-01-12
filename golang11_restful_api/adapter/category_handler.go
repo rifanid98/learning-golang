@@ -25,7 +25,7 @@ func (h CategoryHandler) Create(writer http.ResponseWriter, request *http.Reques
 
 	output := h.uc.Create(request.Context(), input)
 
-	response := &response.PublicResponse{
+	res := &response.PublicResponse{
 		Code:   http.StatusCreated,
 		Status: "Created",
 		Data:   output,
@@ -33,7 +33,7 @@ func (h CategoryHandler) Create(writer http.ResponseWriter, request *http.Reques
 
 	writer.Header().Add("Content-Type", "application/json")
 
-	handler.SendResponseBody(writer, &response)
+	handler.SendResponseBody(writer, &res, http.StatusCreated)
 }
 
 func (h CategoryHandler) Update(writer http.ResponseWriter, request *http.Request, params httprouter.Params) {
@@ -45,7 +45,7 @@ func (h CategoryHandler) Update(writer http.ResponseWriter, request *http.Reques
 
 	output := h.uc.Update(request.Context(), input)
 
-	response := &response.PublicResponse{
+	res := &response.PublicResponse{
 		Code:   http.StatusOK,
 		Status: "Updated",
 		Data:   output,
@@ -53,7 +53,7 @@ func (h CategoryHandler) Update(writer http.ResponseWriter, request *http.Reques
 
 	writer.Header().Add("Content-Type", "application/json")
 
-	handler.SendResponseBody(writer, &response)
+	handler.SendResponseBody(writer, &res, http.StatusOK)
 }
 
 func (h CategoryHandler) Delete(writer http.ResponseWriter, request *http.Request, params httprouter.Params) {
@@ -66,7 +66,7 @@ func (h CategoryHandler) Delete(writer http.ResponseWriter, request *http.Reques
 
 	h.uc.Delete(request.Context(), id)
 
-	response := &response.PublicResponse{
+	res := &response.PublicResponse{
 		Code:   http.StatusOK,
 		Status: "Deleted",
 		Data:   usecase.NewCategoryOutput(category),
@@ -74,7 +74,7 @@ func (h CategoryHandler) Delete(writer http.ResponseWriter, request *http.Reques
 
 	writer.Header().Add("Content-Type", "application/json")
 
-	handler.SendResponseBody(writer, &response)
+	handler.SendResponseBody(writer, &res, http.StatusOK)
 }
 
 func (h CategoryHandler) FindById(writer http.ResponseWriter, request *http.Request, params httprouter.Params) {
@@ -83,7 +83,7 @@ func (h CategoryHandler) FindById(writer http.ResponseWriter, request *http.Requ
 
 	output := h.uc.FindById(request.Context(), id)
 
-	response := &response.PublicResponse{
+	res := &response.PublicResponse{
 		Code:   http.StatusOK,
 		Status: "OK",
 		Data:   output,
@@ -91,13 +91,13 @@ func (h CategoryHandler) FindById(writer http.ResponseWriter, request *http.Requ
 
 	writer.Header().Add("Content-Type", "application/json")
 
-	handler.SendResponseBody(writer, &response)
+	handler.SendResponseBody(writer, &res, http.StatusOK)
 }
 
 func (h CategoryHandler) FindAll(writer http.ResponseWriter, request *http.Request, params httprouter.Params) {
 	output := h.uc.FindAll(request.Context())
 
-	response := &response.PublicResponse{
+	res := &response.PublicResponse{
 		Code:   http.StatusOK,
 		Status: "OK",
 		Data:   output,
@@ -105,5 +105,5 @@ func (h CategoryHandler) FindAll(writer http.ResponseWriter, request *http.Reque
 
 	writer.Header().Add("Content-Type", "application/json")
 
-	handler.SendResponseBody(writer, &response)
+	handler.SendResponseBody(writer, &res, http.StatusOK)
 }

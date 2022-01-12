@@ -31,7 +31,7 @@ func validationErrors(writer http.ResponseWriter, request *http.Request, err int
 			Data:   exception.Error(),
 		}
 
-		handler.SendResponseBody(writer, &response)
+		handler.SendResponseBody(writer, &response, http.StatusBadRequest)
 		return true
 	}
 
@@ -50,7 +50,7 @@ func notFoundError(writer http.ResponseWriter, request *http.Request, err interf
 			Data:   exception.Error,
 		}
 
-		handler.SendResponseBody(writer, &response)
+		handler.SendResponseBody(writer, &response, http.StatusNotFound)
 		return true
 	}
 
@@ -67,7 +67,7 @@ func internalServerError(writer http.ResponseWriter, request *http.Request, err 
 		Data:   err,
 	}
 
-	handler.SendResponseBody(writer, &response)
+	handler.SendResponseBody(writer, &response, http.StatusInternalServerError)
 }
 
 type NotFoundError struct {

@@ -26,6 +26,6 @@ func (middleware *AuthMiddleware) ServeHTTP(writer http.ResponseWriter, request 
 			Status: "Unauthorized",
 		}
 
-		handler.SendResponseBody(writer, &res)
+		handler.SendResponseBody(writer, &res, http.StatusUnauthorized)
 	}
 }
