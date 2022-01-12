@@ -9,7 +9,7 @@
 - Dalam bahasa pemrograman berorientasi object, ada istilah yang bernama Constructor, yaitu sebuah function yang digunakan ketika sebuah object dibuat
 - Di Go-Lang, biasanya kita juga membuat sebuah function untuk membuat object, dan ini mirip seperti Constructor tugasnya, yaitu membuat object baru 
 
-![img.png](img.png)
+![img.png](../img.png)
 
 ## Function Sebagai Constructor (2)
 
@@ -18,7 +18,7 @@
 - Namun saat kode program aplikasi kita semakin besar, akan semakin sulit melakukan hal ini, terutama kita harus tahu urutan object mana yang harus dibuat terlebih dahulu 
 - Oleh karena ini, proses Dependency Injection sebenarnya bisa kita permudah dengan memanfaatkan library 
 
-![img_1.png](img_1.png)
+![img_1.png](../img_1.png)
 
 # Library Dependency Injection
 
