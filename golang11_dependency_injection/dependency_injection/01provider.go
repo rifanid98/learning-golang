@@ -1,5 +1,7 @@
 package dependency_injection
 
+import "errors"
+
 /**
 Provider
 
@@ -8,6 +10,7 @@ Provider
 */
 
 type SimpleRepository struct {
+	Error bool
 }
 
 func NewSimpleRepository() *SimpleRepository {
@@ -15,9 +18,13 @@ func NewSimpleRepository() *SimpleRepository {
 }
 
 type SimpleService struct {
-	repository *SimpleRepository
+	Repository *SimpleRepository
 }
 
-func NewSimpleService(repository *SimpleRepository) *SimpleService {
-	return &SimpleService{repository: repository}
+func NewSimpleService(repository *SimpleRepository) (*SimpleService, error) {
+	if repository.Error {
+		return nil, errors.New("failed create service")
+	} else {
+		return &SimpleService{Repository: repository}, nil
+	}
 }
