@@ -3,7 +3,11 @@
 
 package dependency_injection
 
-import "github.com/google/wire"
+import (
+	"github.com/google/wire"
+	"io"
+	"os"
+)
 
 /**
 Injector
@@ -51,5 +55,20 @@ func InitializedFooBar() *FooBar {
 		fooBarSet,
 		wire.Struct(new(FooBar), "Foo", "Bar"), // * for all fields injection
 	)
+	return nil
+}
+
+var fooBarValueSet = wire.NewSet(
+	wire.Value(&Foo{}),
+	wire.Value(&Bar{}),
+)
+
+func InitializedFooBarUsingValue() *FooBar {
+	wire.Build(fooBarValueSet, wire.Struct(new(FooBar), "*"))
+	return nil
+}
+
+func InitializedReader() io.Reader {
+	wire.Build(wire.InterfaceValue(new(io.Reader), os.Stdin))
 	return nil
 }
