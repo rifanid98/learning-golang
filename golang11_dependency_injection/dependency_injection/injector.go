@@ -20,3 +20,8 @@ func InitializedService(isError bool) (*SimpleService, error) {
 	wire.Build(NewSimpleRepository, NewSimpleService)
 	return nil, nil
 }
+
+func InitializedDatabaseRepository() *DatabaseRepository {
+	wire.Build(NewDatabasePostgreSQL, NewDatabaseMongoDB, NewDatabaseRepository)
+	return nil
+}
