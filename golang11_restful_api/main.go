@@ -7,6 +7,7 @@ import (
 	"golang11_restful_api/adapter"
 	error2 "golang11_restful_api/common/error"
 	"golang11_restful_api/common/exception"
+	"golang11_restful_api/common/middleware"
 	"golang11_restful_api/infrastructure/database"
 	"golang11_restful_api/infrastructure/persistence/repository"
 	"golang11_restful_api/usecase"
@@ -33,7 +34,7 @@ func main() {
 
 	server := http.Server{
 		Addr:    "localhost:3000",
-		Handler: router,
+		Handler: middleware.NewAuthMiddleware(router),
 	}
 
 	err := server.ListenAndServe()
