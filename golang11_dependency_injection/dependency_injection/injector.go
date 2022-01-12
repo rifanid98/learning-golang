@@ -72,3 +72,8 @@ func InitializedReader() io.Reader {
 	wire.Build(wire.InterfaceValue(new(io.Reader), os.Stdin))
 	return nil
 }
+
+func InitializeConfiguration() *Configuration {
+	wire.Build(NewApplication, wire.FieldsOf(new(*Application), "Configuration"))
+	return nil
+}
