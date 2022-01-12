@@ -33,7 +33,6 @@ func (uc CategoryInteractor) Create(ctx context.Context, input *CategoryInput) *
 
 	tx, err := uc.DB.Begin()
 	common.PanicIfError(err)
-	defer common.CommitOrRollback(tx)
 
 	category := &entity.Category{
 		Name: input.Name,
@@ -41,6 +40,7 @@ func (uc CategoryInteractor) Create(ctx context.Context, input *CategoryInput) *
 
 	category = uc.CategoryRepository.Save(ctx, tx, category)
 
+	common.CommitOrRollback(tx)
 	return NewCategoryOutput(category)
 }
 
@@ -50,44 +50,49 @@ func (uc CategoryInteractor) Update(ctx context.Context, input *CategoryInput) *
 
 	tx, err := uc.DB.Begin()
 	common.PanicIfError(err)
-	defer common.CommitOrRollback(tx)
 
 	category, err := uc.CategoryRepository.FindById(ctx, tx, input.Id)
-	common.PanicIfError(err)
+	if err != nil {
+		panic(common.NewNotFoundError(err.Error()))
+	}
 
 	category.Name = input.Name
 
 	category = uc.CategoryRepository.Update(ctx, tx, category)
 
+	common.CommitOrRollback(tx)
 	return NewCategoryOutput(category)
 }
 
 func (uc CategoryInteractor) Delete(ctx context.Context, id int) {
 	tx, err := uc.DB.Begin()
 	common.PanicIfError(err)
-	defer common.CommitOrRollback(tx)
 
 	category, err := uc.CategoryRepository.FindById(ctx, tx, id)
-	common.PanicIfError(err)
+	if err != nil {
+		panic(common.NewNotFoundError(err.Error()))
+	}
 
 	uc.CategoryRepository.Delete(ctx, tx, category)
+	common.CommitOrRollback(tx)
 }
 
 func (uc CategoryInteractor) FindById(ctx context.Context, id int) *CategoryOutput {
 	tx, err := uc.DB.Begin()
 	common.PanicIfError(err)
-	defer common.CommitOrRollback(tx)
 
 	category, err := uc.CategoryRepository.FindById(ctx, tx, id)
-	common.PanicIfError(err)
+	if err != nil {
+		panic(common.NewNotFoundError(err.Error()))
+	}
 
+	common.CommitOrRollback(tx)
 	return NewCategoryOutput(category)
 }
 
 func (uc CategoryInteractor) FindAll(ctx context.Context) []CategoryOutput {
 	tx, err := uc.DB.Begin()
 	common.PanicIfError(err)
-	defer common.CommitOrRollback(tx)
 
 	categories := uc.CategoryRepository.FindAll(ctx, tx)
 
@@ -97,5 +102,6 @@ func (uc CategoryInteractor) FindAll(ctx context.Context) []CategoryOutput {
 		categoriesOutput = append(categoriesOutput, *NewCategoryOutput(&category))
 	}
 
+	common.CommitOrRollback(tx)
 	return categoriesOutput
 }

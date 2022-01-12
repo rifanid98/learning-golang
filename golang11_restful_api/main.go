@@ -28,6 +28,8 @@ func main() {
 	router.PUT("/api/categories/:categoryId", categoryController.Update)
 	router.DELETE("/api/categories/:categoryId", categoryController.Delete)
 
+	router.PanicHandler = common.ErrorHandler
+
 	server := http.Server{
 		Addr:    "localhost:3000",
 		Handler: router,
