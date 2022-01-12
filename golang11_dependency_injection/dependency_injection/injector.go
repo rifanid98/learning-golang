@@ -16,7 +16,7 @@ Injector
 - Khusus ketika membuat Injector, pada file nya kita perlu tambahkan komentar penanda :
 */
 
-func InitializedService() (*SimpleService, error) {
+func InitializedService(isError bool) (*SimpleService, error) {
 	wire.Build(NewSimpleRepository, NewSimpleService)
 	return nil, nil
 }
