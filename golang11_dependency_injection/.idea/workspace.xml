@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="24d16500-4527-4a00-b2cf-2b087d3c77ef" name="Changes" comment="refactored">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/00pengenalan.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_01provider/provider.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_01provider/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_02injector/injector.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_02injector/provider.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_02injector/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_03dependency_injection/injector.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_03dependency_injection/provider.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_03dependency_injection/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_03dependency_injection/wire_gen.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_04error/injector.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_04error/provider.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_04error/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_04error/wire_gen.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_04error/wire_gen_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_05injector_parameter/injector.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_05injector_parameter/provider.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_05injector_parameter/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_05injector_parameter/wire_gen.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_05injector_parameter/wire_gen_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_06mulitple_binding/injector.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_06mulitple_binding/provider.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_06mulitple_binding/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_06mulitple_binding/wire_gen.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_07provider_set/injector.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_07provider_set/provider_bar.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_07provider_set/provider_foo.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_07provider_set/provider_foobar.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_07provider_set/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_07provider_set/wire_gen.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_08binding_interface/injector.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_08binding_interface/provider.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_08binding_interface/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_08binding_interface/wire_gen.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_09struct_provider/injector.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_09struct_provider/provider.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_09struct_provider/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_09struct_provider/wire_gen.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_10binding_values/injector.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_10binding_values/provider.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_10binding_values/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_10binding_values/wire_gen.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_11struct_field_provider/injector.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_11struct_field_provider/provider.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_11struct_field_provider/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_11struct_field_provider/wire_gen.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_12cleanup_function/injector.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_12cleanup_function/provider.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_12cleanup_function/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency_injection/_12cleanup_function/wire_gen.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/restfulapi/adapter/category_controller.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/restfulapi/adapter/category_handler.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/restfulapi/apispec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/restfulapi/common/database/database.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/restfulapi/common/error/error.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/restfulapi/common/exception/exception.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/restfulapi/common/handler/handler.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/restfulapi/common/middleware/middleware.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/restfulapi/common/response/response.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/restfulapi/domain/entity/category.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/restfulapi/domain/repository/category_repository.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/restfulapi/go.mod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/restfulapi/go.sum" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/restfulapi/http.rest" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/restfulapi/infrastructure/database/database.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/restfulapi/infrastructure/persistence/repository/category_repository_impl.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/restfulapi/infrastructure/router/router.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/restfulapi/main.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/restfulapi/test/category_controller_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/restfulapi/usecase/category_interactor.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/restfulapi/usecase/category_usecase.go" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" url="file:///usr/local/go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="false" />
+  </component>
+  <component name="ProjectId" id="23aEzdFALVW2qQ9nrTqznb5Ug1B" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="format.on.save" value="true" />
+    <property name="go.formatter.settings.were.checked" value="true" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.modules.go.list.on.any.changes.was.set" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../golang12_dependency_injection" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="optimize.imports.on.save" value="true" />
+    <property name="rearrange.code.on.save" value="true" />
+    <property name="settings.editor.selected.configurable" value="actions.on.save" />
+  </component>
+  <component name="ReaderModeSettings">
+    <option name="showLigatures" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/dependency_injection/_12cleanup_function" />
+      <recent name="$PROJECT_DIR$/dependency_injection/_11struct_field_provider" />
+      <recent name="$PROJECT_DIR$/dependency_injection/_10binding_values" />
+      <recent name="$PROJECT_DIR$/dependency_injection/_09struct_provider" />
+      <recent name="$PROJECT_DIR$/dependency_injection/_08binding_interface" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/dependency_injection/01provider" />
+      <recent name="$PROJECT_DIR$/simple" />
+      <recent name="$PROJECT_DIR$/restfulapi" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Go Test.go test golang11_dependency_injection/dependency_injection/_05injector_parameter">
+    <configuration name="TestSimpleService in golang11_dependency_injection/dependency_injection/test" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="golang11_dependency_injection" />
+      <working_directory value="$PROJECT_DIR$/dependency_injection/test" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="golang11_dependency_injection/dependency_injection/test" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestSimpleService\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestSimpleServiceError in golang11_dependency_injection/dependency_injection/_04error" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="golang11_dependency_injection" />
+      <working_directory value="$PROJECT_DIR$/dependency_injection/_04error" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="golang11_dependency_injection/dependency_injection/_04error" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestSimpleServiceError\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go test golang11_dependency_injection/dependency_injection/_04error" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="golang11_dependency_injection" />
+      <working_directory value="$PROJECT_DIR$/dependency_injection/_04error" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="golang11_dependency_injection/dependency_injection/_04error" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go test golang11_dependency_injection/dependency_injection/_05injector_parameter" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="golang11_dependency_injection" />
+      <working_directory value="$PROJECT_DIR$/dependency_injection/_05injector_parameter" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="golang11_dependency_injection/dependency_injection/_05injector_parameter" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go test golang11_dependency_injection/dependency_injection/test" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="golang11_dependency_injection" />
+      <working_directory value="$PROJECT_DIR$/dependency_injection/test" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="golang11_dependency_injection/dependency_injection/test" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Test.go test golang11_dependency_injection/dependency_injection/_05injector_parameter" />
+        <item itemvalue="Go Test.TestSimpleServiceError in golang11_dependency_injection/dependency_injection/_04error" />
+        <item itemvalue="Go Test.go test golang11_dependency_injection/dependency_injection/_04error" />
+        <item itemvalue="Go Test.go test golang11_dependency_injection/dependency_injection/test" />
+        <item itemvalue="Go Test.TestSimpleService in golang11_dependency_injection/dependency_injection/test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Integration Test" />
+    <MESSAGE value="initial commit - golang dependency injection" />
+    <MESSAGE value="pengenalan dependency injection" />
+    <MESSAGE value="clone from previous course" />
+    <MESSAGE value="add google wire package" />
+    <MESSAGE value="pengenalan" />
+    <MESSAGE value="provider" />
+    <MESSAGE value="add description" />
+    <MESSAGE value="injector" />
+    <MESSAGE value="initialized golang module" />
+    <MESSAGE value="dependency injection" />
+    <MESSAGE value="Google Wire bisa mendeteksi Error" />
+    <MESSAGE value="renamed" />
+    <MESSAGE value="Injector Parameter" />
+    <MESSAGE value="Multiple Binding" />
+    <MESSAGE value="Provider Set" />
+    <MESSAGE value="Binding Interface" />
+    <MESSAGE value="Struct Provider" />
+    <MESSAGE value="Binding Values" />
+    <MESSAGE value="Struct Field Provider" />
+    <MESSAGE value="Cleanup Function" />
+    <MESSAGE value="refactored" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactored" />
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>true</integration-enabled>
+  </component>
+</project>
